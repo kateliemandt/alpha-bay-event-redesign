@@ -1,0 +1,1192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex,nofollow" />
+<title>Cocktails &amp; Conversations with MacKenzie Price &amp; Alpha Bay Area</title>
+<meta name="description" content="An evening with MacKenzie Price, founder of Alpha School. Wed April 22, 2026 · Piedmont, CA." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ─── Alpha · Cocktails & Conversations · Bay Area ───
+   Brand blue · Piedmont · Apr 22 2026
+   Simple, considered, unhurried.
+   ───────────────────────────────── */
+
+:root{
+  --brand:      #0072E5;      /* Alpha blue (extracted from alpha.school) */
+  --brand-deep: #0051A6;
+  --brand-ink:  #062C5A;
+  --brand-soft: #E6F1FF;
+  --brand-mist: #F4F9FF;
+
+  --ink:        #0A1A2F;
+  --ink-2:      #3A4A60;
+  --ink-3:      #6A7686;
+  --ink-4:      #A3ACB9;
+
+  --paper:      #FBFCFE;
+  --paper-2:    #F1F5FB;
+  --panel:      #FFFFFF;
+
+  --gold:       #E6B84B;      /* warm accent for "something special" */
+  --gold-soft:  #FFF5D6;
+
+  --line:       rgba(10,26,47,.10);
+  --line-2:     rgba(10,26,47,.16);
+
+  --ff-display: 'Instrument Serif', 'Times New Roman', serif;
+  --ff-body:    'Figtree', ui-sans-serif, system-ui, sans-serif;
+
+  --ease: cubic-bezier(.2,.7,.1,1);
+  --maxw: 1180px;
+  --radius: 14px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+html{ scroll-behavior:smooth; background:var(--paper); }
+body{
+  color:var(--ink);
+  background:var(--paper);
+  font-family:var(--ff-body);
+  font-size:16px;
+  line-height:1.55;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; }
+::selection{ background:var(--brand); color:#fff; }
+
+/* ── Type helpers ──────────────────────────────── */
+.serif{ font-family:var(--ff-display); font-weight:400; letter-spacing:-0.01em; }
+.serif-it{ font-family:var(--ff-display); font-style:italic; font-weight:400; letter-spacing:-0.01em; }
+.eyebrow{
+  font-family:var(--ff-body);
+  font-size:11.5px; letter-spacing:.20em; text-transform:uppercase;
+  font-weight:600; color:var(--brand);
+}
+.mono-num{ font-variant-numeric:tabular-nums; letter-spacing:.02em; }
+
+/* ── Shell ─────────────────────────────────────── */
+.shell{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 28px;
+  position:relative;
+}
+@media (max-width:720px){ .shell{ padding:0 20px; } }
+
+/* ── NAV ───────────────────────────────────────── */
+.nav{
+  position:sticky; top:0; z-index:40;
+  background:rgba(251,252,254,.82);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  height:62px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:600; letter-spacing:-0.01em; font-size:17px;
+  color:var(--ink);
+}
+.brand .mark{
+  width:26px; height:26px; border-radius:50%;
+  background:
+    radial-gradient(circle at 30% 30%, #4A9CFF, var(--brand) 55%, var(--brand-deep));
+  box-shadow: 0 4px 14px -4px rgba(0,114,229,.55), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.brand .sep{ color:var(--ink-4); margin:0 2px; }
+.brand .loc{ color:var(--ink-3); font-weight:500; font-size:15px; }
+
+.nav-cta{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:10px 16px;
+  border-radius:999px;
+  background:var(--brand); color:#fff;
+  font-weight:600; font-size:13.5px; letter-spacing:.01em;
+  transition:transform .2s var(--ease), background .2s;
+}
+.nav-cta:hover{ transform:translateY(-1px); background:var(--brand-deep); }
+.nav-cta .arr{ transition:transform .3s var(--ease); }
+.nav-cta:hover .arr{ transform:translateX(3px); }
+
+/* ── HERO ──────────────────────────────────────── */
+.hero{
+  position:relative;
+  padding:76px 0 40px;
+  overflow:hidden;
+}
+.hero::before{
+  /* soft blue wash behind the headline */
+  content:""; position:absolute;
+  top:-200px; right:-160px;
+  width:720px; height:720px;
+  background:radial-gradient(closest-side, rgba(0,114,229,.14), transparent 68%);
+  pointer-events:none; z-index:0;
+}
+.hero::after{
+  content:""; position:absolute;
+  bottom:-260px; left:-140px;
+  width:520px; height:520px;
+  background:radial-gradient(closest-side, rgba(0,114,229,.08), transparent 68%);
+  pointer-events:none; z-index:0;
+}
+.hero-inner{ position:relative; z-index:1; }
+
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:12px;
+  padding:7px 14px 7px 8px;
+  border:1px solid var(--line-2);
+  border-radius:999px;
+  background:var(--panel);
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-2); font-weight:600;
+}
+.hero-eyebrow .pulse{
+  width:8px; height:8px; border-radius:50%; background:var(--brand);
+  box-shadow:0 0 0 4px rgba(0,114,229,.18);
+  animation:pulse 2s var(--ease) infinite;
+}
+@keyframes pulse{
+  0%,100%{ transform:scale(1); opacity:1; }
+  50%{ transform:scale(.85); opacity:.55; }
+}
+.hero-eyebrow b{ color:var(--brand); font-weight:700; }
+
+.hero-title{
+  margin:26px 0 0;
+  font-family:var(--ff-display);
+  font-weight:400;
+  font-size:clamp(44px, 7.2vw, 104px);
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+  max-width:14ch;
+}
+.hero-title em{
+  font-style:italic; color:var(--brand);
+}
+.hero-title .amp{
+  font-style:italic; color:var(--brand); font-weight:400;
+}
+
+.hero-sub{
+  margin:26px 0 0;
+  max-width:58ch;
+  font-size:18px; line-height:1.55;
+  color:var(--ink-2);
+}
+.hero-sub b{ color:var(--ink); font-weight:600; }
+
+.hero-ctas{
+  margin-top:34px;
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 20px;
+  border-radius:999px;
+  font-weight:600; font-size:14.5px;
+  transition:transform .2s var(--ease), background .2s, color .2s, box-shadow .2s;
+}
+.btn-primary{
+  background:var(--brand); color:#fff;
+  box-shadow: 0 8px 24px -10px rgba(0,114,229,.55);
+}
+.btn-primary:hover{ background:var(--brand-deep); transform:translateY(-1px); }
+.btn-ghost{
+  background:var(--panel); color:var(--ink);
+  border:1px solid var(--line-2);
+}
+.btn-ghost:hover{ border-color:var(--brand); color:var(--brand); }
+.btn .arr{ transition:transform .3s var(--ease); }
+.btn:hover .arr{ transform:translateX(3px); }
+
+/* ── Fact strip ───────────────────────────────── */
+.facts{
+  margin-top:56px;
+  display:grid; grid-template-columns:repeat(4, 1fr);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  background:var(--panel);
+  overflow:hidden;
+  box-shadow:0 1px 0 rgba(10,26,47,.03);
+}
+@media (max-width:820px){ .facts{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:480px){ .facts{ grid-template-columns:1fr; } }
+
+.fact{
+  padding:22px 22px 20px;
+  border-right:1px solid var(--line);
+  position:relative;
+}
+.fact:last-child{ border-right:0; }
+@media (max-width:820px){
+  .fact:nth-child(2n){ border-right:0; }
+  .fact:nth-child(-n+2){ border-bottom:1px solid var(--line); }
+}
+@media (max-width:480px){
+  .fact{ border-right:0; border-bottom:1px solid var(--line); }
+  .fact:last-child{ border-bottom:0; }
+}
+
+.fact .k{
+  display:flex; align-items:center; gap:8px;
+  font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600;
+  margin-bottom:10px;
+}
+.fact .ico{
+  width:18px; height:18px; color:var(--brand);
+  flex:0 0 auto;
+}
+.fact .v{
+  font-family:var(--ff-display);
+  font-size:22px; line-height:1.15;
+  color:var(--ink);
+}
+.fact .v small{
+  display:block;
+  font-family:var(--ff-body);
+  font-size:13px; color:var(--ink-3);
+  margin-top:4px; letter-spacing:0;
+  font-weight:500;
+}
+
+/* ── Something Special — the hype beat ───────── */
+.special{
+  margin-top:96px;
+  position:relative;
+}
+.special-card{
+  position:relative;
+  padding:clamp(36px, 6vw, 72px);
+  border-radius:calc(var(--radius) + 6px);
+  background:
+    linear-gradient(135deg, #07306E 0%, #0B5BC2 55%, #1A8CF3 100%);
+  color:#fff;
+  overflow:hidden;
+  box-shadow:
+    0 30px 80px -28px rgba(0,68,155,.55),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+/* Star / sparkle field on the card */
+.special-card::before{
+  content:""; position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(255,255,255,.8) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 78% 28%, rgba(255,255,255,.6) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 72%, rgba(255,255,255,.85) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 22% 78%, rgba(255,255,255,.55) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 50% 12%, rgba(255,255,255,.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 38% 52%, rgba(255,255,255,.5) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 68% 46%, rgba(255,255,255,.65) 0 1px, transparent 1.5px);
+  opacity:.9;
+  animation:twinkle 5s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes twinkle{
+  0%,100%{ opacity:.35; }
+  50%{ opacity:.9; }
+}
+/* Soft aurora ribbon */
+.special-card::after{
+  content:""; position:absolute; inset:auto -10% -30% -10%;
+  height:60%;
+  background: radial-gradient(ellipse at center, rgba(230,184,75,.35), transparent 60%);
+  filter: blur(40px);
+  pointer-events:none;
+}
+
+.special-head{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:7px 14px 7px 8px;
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  font-size:11.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:#fff; font-weight:600;
+  position:relative; z-index:1;
+  backdrop-filter:blur(6px);
+}
+.special-head .spark{
+  width:14px; height:14px; display:inline-block;
+  color:var(--gold);
+  animation:spin 9s linear infinite;
+}
+@keyframes spin{ to { transform:rotate(360deg); } }
+
+.special h2{
+  margin:22px 0 0;
+  position:relative; z-index:1;
+  font-family:var(--ff-display); font-weight:400;
+  font-size:clamp(42px, 6.2vw, 88px);
+  line-height:1.04; letter-spacing:-0.02em;
+  color:#fff;
+  max-width:16ch;
+}
+.special h2 em{ color:var(--gold); font-style:italic; }
+
+.special p{
+  margin:22px 0 0;
+  position:relative; z-index:1;
+  font-size:17px; line-height:1.55;
+  color:rgba(255,255,255,.85);
+  max-width:58ch;
+}
+.special p b{ color:#fff; font-weight:600; }
+
+.special-meta{
+  margin-top:32px; position:relative; z-index:1;
+  display:flex; gap:18px; flex-wrap:wrap; align-items:center;
+}
+.special-chip{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:9px 14px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff; font-size:13px; font-weight:500;
+  backdrop-filter:blur(6px);
+}
+.special-chip .dot{
+  width:6px; height:6px; border-radius:50%;
+  background:var(--gold);
+}
+.special-chip .dot.blue{ background:#7EC4FF; }
+
+.special-countdown{
+  margin-left:auto;
+  display:flex; align-items:flex-end; gap:14px;
+  font-weight:500;
+}
+.special-countdown .lbl{
+  font-size:10.5px; letter-spacing:.22em; text-transform:uppercase;
+  color:rgba(255,255,255,.6); display:block; margin-bottom:4px;
+}
+.special-countdown .nums{
+  display:flex; gap:14px;
+  font-family:var(--ff-display); font-weight:400;
+  font-size:26px; color:#fff; line-height:1;
+}
+.special-countdown .nums span{
+  display:inline-flex; align-items:baseline; gap:4px;
+}
+.special-countdown .nums b{
+  font-family:var(--ff-display); font-weight:400;
+  min-width:36px; text-align:right; font-variant-numeric:tabular-nums;
+  color:var(--gold);
+}
+.special-countdown .nums i{
+  font-style:normal;
+  font-family:var(--ff-body); font-size:11px;
+  color:rgba(255,255,255,.6); letter-spacing:.2em; text-transform:uppercase;
+}
+@media (max-width:720px){
+  .special-countdown{ margin-left:0; width:100%; margin-top:10px; }
+}
+
+/* ── Section ───────────────────────────────────── */
+.section{
+  padding:96px 0;
+}
+.sec-head{
+  max-width:680px; margin-bottom:40px;
+}
+.sec-head .eyebrow{ display:block; margin-bottom:14px; }
+.sec-head h2{
+  margin:0;
+  font-family:var(--ff-display);
+  font-weight:400;
+  font-size:clamp(36px, 4.8vw, 64px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  color:var(--ink);
+}
+.sec-head h2 em{ font-style:italic; color:var(--brand); }
+.sec-head p{
+  margin:18px 0 0;
+  color:var(--ink-2);
+  font-size:17px; line-height:1.6;
+  max-width:60ch;
+}
+
+/* ── Host card ─────────────────────────────────── */
+.host{
+  display:grid; grid-template-columns:320px 1fr;
+  gap:48px; align-items:center;
+  padding:42px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:0 1px 0 rgba(10,26,47,.03);
+}
+@media (max-width:820px){
+  .host{ grid-template-columns:1fr; padding:28px; gap:28px; }
+}
+.host-portrait{
+  aspect-ratio:4/5;
+  border-radius:calc(var(--radius) - 4px);
+  background:
+    radial-gradient(circle at 30% 30%, #6CB3FF, var(--brand) 50%, var(--brand-deep) 100%);
+  position:relative; overflow:hidden;
+  display:grid; place-items:center;
+  box-shadow: 0 24px 60px -26px rgba(0,81,166,.5);
+}
+.host-portrait::before{
+  content:""; position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,.22), transparent 55%),
+    radial-gradient(circle at 20% 90%, rgba(255,255,255,.15), transparent 55%);
+}
+.host-portrait .initials{
+  font-family:var(--ff-display); font-style:italic;
+  color:#fff; font-size:112px; line-height:1;
+  text-shadow:0 6px 24px rgba(0,0,0,.18);
+  position:relative;
+}
+.host-portrait .ring{
+  position:absolute; inset:16px;
+  border:1px solid rgba(255,255,255,.28); border-radius:inherit;
+}
+.host-copy h3{
+  margin:0 0 6px;
+  font-family:var(--ff-display); font-weight:400;
+  font-size:42px; line-height:1.05; letter-spacing:-0.015em;
+}
+.host-copy .role{
+  color:var(--brand); font-weight:600; font-size:14px; letter-spacing:.02em;
+  margin-bottom:18px;
+}
+.host-copy p{
+  margin:0; color:var(--ink-2); font-size:16px; line-height:1.65; max-width:62ch;
+}
+
+/* ── Form ──────────────────────────────────────── */
+.form-wrap{
+  display:grid; grid-template-columns:1.05fr 1fr;
+  gap:64px; align-items:start;
+}
+@media (max-width:960px){ .form-wrap{ grid-template-columns:1fr; gap:34px; } }
+
+.form-intro h2{
+  margin:0;
+  font-family:var(--ff-display); font-weight:400;
+  font-size:clamp(44px, 5.4vw, 78px);
+  line-height:1;
+  letter-spacing:-0.02em;
+}
+.form-intro h2 em{ color:var(--brand); font-style:italic; }
+.form-intro p{
+  margin:22px 0 0; color:var(--ink-2); font-size:17px; line-height:1.6;
+  max-width:50ch;
+}
+.form-intro .quickfacts{
+  margin-top:34px; padding-top:26px;
+  border-top:1px solid var(--line);
+  display:grid; gap:14px;
+}
+.form-intro .qf{
+  display:grid; grid-template-columns:120px 1fr; gap:18px;
+  font-size:14.5px;
+}
+.form-intro .qf dt{
+  color:var(--ink-3); font-weight:500;
+  font-size:11.5px; letter-spacing:.18em; text-transform:uppercase;
+  padding-top:2px;
+}
+.form-intro .qf dd{ margin:0; color:var(--ink); font-weight:500; }
+.form-intro .qf dd small{ display:block; color:var(--ink-3); font-weight:400; margin-top:2px; font-size:13px;}
+
+.card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:32px;
+  box-shadow: 0 30px 60px -40px rgba(10,26,47,.2), 0 1px 0 rgba(10,26,47,.03);
+  position:relative;
+}
+.card .badge{
+  position:absolute; top:-12px; left:32px;
+  padding:5px 12px; border-radius:999px;
+  background:var(--brand); color:#fff;
+  font-size:11px; letter-spacing:.18em; text-transform:uppercase; font-weight:700;
+  box-shadow: 0 8px 22px -10px rgba(0,114,229,.5);
+}
+
+.form-header{
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding-bottom:18px; border-bottom:1px solid var(--line);
+  margin-bottom:20px;
+}
+.form-header h3{
+  margin:0;
+  font-family:var(--ff-display); font-weight:400;
+  font-style:italic; font-size:24px; color:var(--ink);
+}
+.form-header .step{
+  font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600;
+}
+.form-header .step b{ color:var(--brand); }
+
+.fgrid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 16px; }
+.fgrid .full{ grid-column:1/-1; }
+@media (max-width:540px){ .fgrid{ grid-template-columns:1fr; } }
+
+.field{
+  position:relative;
+  display:flex; flex-direction:column; gap:4px;
+}
+.field label{
+  font-size:12px; letter-spacing:.06em; font-weight:600;
+  color:var(--ink-2);
+}
+.field label .req{ color:var(--brand); }
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid var(--line-2);
+  background:var(--paper);
+  color:var(--ink);
+  font:inherit; font-size:15px;
+  transition:border-color .2s, box-shadow .2s, background .2s;
+  outline:none;
+}
+.field input:hover,
+.field select:hover,
+.field textarea:hover{ border-color:var(--ink-4); }
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--brand);
+  background:var(--panel);
+  box-shadow: 0 0 0 4px rgba(0,114,229,.14);
+}
+.field textarea{ resize:vertical; min-height:70px; }
+.field select{
+  appearance:none; -webkit-appearance:none; cursor:pointer;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' fill='none' stroke='%236A7686' stroke-width='1.4' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat; background-position:right 14px center;
+  padding-right:36px;
+}
+.field .hint{
+  font-size:12px; color:var(--ink-3); margin-top:2px;
+}
+
+.group-head{
+  grid-column:1/-1;
+  margin-top:22px;
+  padding-top:18px;
+  border-top:1px dashed var(--line-2);
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap:12px;
+}
+.group-head h4{
+  margin:0; font-family:var(--ff-display); font-weight:400;
+  font-style:italic; font-size:20px; color:var(--ink);
+}
+.group-head .note{
+  font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); font-weight:600;
+}
+
+.student-row{
+  grid-column:1/-1;
+  display:grid; grid-template-columns: 1.4fr 1fr auto;
+  gap:12px; align-items:end;
+  padding:14px; border:1px dashed var(--line-2); border-radius:12px;
+  background:var(--brand-mist);
+}
+.student-row .rm{
+  padding:10px 12px; border-radius:10px;
+  border:1px solid var(--line-2); color:var(--ink-3);
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  transition:all .2s;
+  background:var(--panel);
+}
+.student-row .rm:hover{ color:#b3261e; border-color:#f2b9b3; background:#fdf3f2; }
+@media (max-width:540px){
+  .student-row{ grid-template-columns:1fr; }
+}
+
+.addrow{
+  grid-column:1/-1;
+  display:inline-flex; align-items:center; gap:8px;
+  align-self:start;
+  padding:10px 14px;
+  border:1px dashed var(--line-2);
+  border-radius:999px;
+  color:var(--brand); font-weight:600; font-size:13px;
+  transition:all .2s var(--ease); cursor:pointer;
+  background:var(--paper);
+  width:max-content;
+}
+.addrow:hover{ background:var(--brand-soft); border-color:var(--brand); border-style:solid; }
+.addrow .plus{ font-size:16px; line-height:1; color:var(--brand); font-weight:600; }
+
+.submit-row{
+  margin-top:24px; padding-top:20px;
+  border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; gap:16px; align-items:center;
+  flex-wrap:wrap;
+}
+.submit-row .small{
+  font-size:12px; color:var(--ink-3); max-width:34ch; line-height:1.55;
+}
+.submit{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 22px;
+  border-radius:999px;
+  background:var(--brand); color:#fff;
+  font-weight:600; font-size:14.5px;
+  box-shadow: 0 14px 30px -14px rgba(0,114,229,.55);
+  transition:transform .2s var(--ease), background .2s;
+  cursor:pointer;
+}
+.submit:hover{ background:var(--brand-deep); transform:translateY(-1px); }
+.submit .arr{ transition:transform .3s var(--ease); }
+.submit:hover .arr{ transform:translateX(4px); }
+
+.form-status{
+  margin-top:14px;
+  font-size:13px; font-weight:600;
+  min-height:18px;
+  color:var(--brand);
+}
+.form-status.err{ color:#b3261e; }
+
+/* ── Footer ────────────────────────────────────── */
+footer{
+  margin-top:40px;
+  padding:46px 0 34px;
+  border-top:1px solid var(--line);
+  background:var(--paper-2);
+}
+.foot-grid{
+  display:flex; justify-content:space-between; align-items:center; gap:20px;
+  flex-wrap:wrap;
+}
+.foot-grid .brand{ font-size:15px; }
+.foot-grid .small{
+  font-size:12.5px; color:var(--ink-3);
+  letter-spacing:.04em;
+}
+.foot-bar{
+  margin-top:20px; padding-top:16px;
+  border-top:1px solid var(--line);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-size:11.5px; color:var(--ink-3); letter-spacing:.14em; text-transform:uppercase;
+}
+.foot-bar a{ color:var(--ink-3); transition:color .2s; }
+.foot-bar a:hover{ color:var(--brand); }
+
+/* ── Reveal ─────────────────────────────────── */
+.reveal{
+  opacity:0; transform:translateY(14px);
+  transition:opacity .8s var(--ease), transform .9s var(--ease);
+}
+.reveal.is-in{ opacity:1; transform:none; }
+.reveal[data-d="1"]{ transition-delay:.05s; }
+.reveal[data-d="2"]{ transition-delay:.13s; }
+.reveal[data-d="3"]{ transition-delay:.21s; }
+.reveal[data-d="4"]{ transition-delay:.29s; }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none!important; transition:none!important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────── -->
+<nav class="nav">
+  <div class="shell nav-inner">
+    <a href="#top" class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <span>Alpha School</span>
+      <span class="sep">·</span>
+      <span class="loc">Bay Area</span>
+    </a>
+    <a href="#register" class="nav-cta">Register <span class="arr">→</span></a>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────── -->
+<header id="top" class="hero">
+  <div class="shell hero-inner">
+
+    <div class="hero-eyebrow reveal" data-d="1">
+      <span class="pulse" aria-hidden="true"></span>
+      <span>In-Person Event · <b>Alpha Bay Area</b></span>
+    </div>
+
+    <h1 class="hero-title reveal" data-d="2">
+      Cocktails <span class="amp">&amp;</span> <em>Conversations</em><br>
+      with MacKenzie Price <span class="amp">&amp;</span> Alpha Bay Area.
+    </h1>
+
+    <p class="hero-sub reveal" data-d="3">
+      An evening with <b>MacKenzie Price</b>, co-founder of Alpha School, hosted in Piedmont.
+      Drinks, candid conversation, and <b>a special announcement</b> you'll hear here first.
+    </p>
+
+    <div class="hero-ctas reveal" data-d="4">
+      <a href="#register" class="btn btn-primary">Reserve your seat <span class="arr">→</span></a>
+      <a href="#special" class="btn btn-ghost">What's being announced <span class="arr">↘</span></a>
+    </div>
+
+    <!-- Facts strip -->
+    <div class="facts reveal" data-d="4">
+      <div class="fact">
+        <div class="k">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          <span>Date</span>
+        </div>
+        <div class="v">Wed · April 22, 2026<small>Pacific Time</small></div>
+      </div>
+      <div class="fact">
+        <div class="k">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Time</span>
+        </div>
+        <div class="v mono-num">6:00 – 9:00 PM<small>Doors at 5:55 PM</small></div>
+      </div>
+      <div class="fact">
+        <div class="k">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          <span>Location</span>
+        </div>
+        <div class="v">Piedmont, CA<small>11 Glen Alpine Rd · 94611</small></div>
+      </div>
+      <div class="fact">
+        <div class="k">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/><path d="M17 3.13A4 4 0 0 1 17 11"/></svg>
+          <span>Hosted by</span>
+        </div>
+        <div class="v serif-it">MacKenzie Price<small>Co-founder, Alpha School</small></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ── SOMETHING SPECIAL ─────────────────── -->
+<section id="special" class="shell section" style="padding-top:40px;">
+  <div class="special reveal" data-d="1">
+    <div class="special-card">
+
+      <div class="special-head">
+        <svg class="spark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2zM19 15l.8 3.2L23 19l-3.2.8L19 23l-.8-3.2L15 19l3.2-.8L19 15zM5 4l.6 2.4L8 7l-2.4.6L5 10l-.6-2.4L2 7l2.4-.6L5 4z"/>
+        </svg>
+        <span>Something Special · Announcement incoming</span>
+      </div>
+
+      <h2>
+        A first look at<br>
+        <em>what's next</em> for Alpha in the Bay Area.
+      </h2>
+
+      <p>
+        MacKenzie will be sharing <b>news we haven't made public yet</b> — in the room,
+        before the email. Come for the conversation, stay for the reveal. Reserved
+        seating is limited; confirmation goes out within the hour.
+      </p>
+
+      <div class="special-meta">
+        <div class="special-chip"><span class="dot"></span> Unveiled live · no spoilers</div>
+        <div class="special-chip"><span class="dot blue"></span> Q&amp;A immediately after</div>
+
+        <div class="special-countdown" aria-live="polite">
+          <div>
+            <span class="lbl">Countdown to doors</span>
+            <div class="nums mono-num">
+              <span><b id="cd-d">--</b><i>days</i></span>
+              <span><b id="cd-h">--</b><i>hrs</i></span>
+              <span><b id="cd-m">--</b><i>min</i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── HOST ─────────────────────────────── -->
+<section class="shell section" style="padding-top:40px; padding-bottom:40px;">
+  <div class="sec-head">
+    <span class="eyebrow">Your host</span>
+    <h2>An evening with <em>MacKenzie Price</em>.</h2>
+  </div>
+
+  <div class="host reveal" data-d="1">
+    <div class="host-portrait" aria-hidden="true">
+      <span class="ring"></span>
+      <span class="initials">MP</span>
+    </div>
+    <div class="host-copy">
+      <h3>MacKenzie Price</h3>
+      <div class="role">Co-founder · Alpha School</div>
+      <p>
+        MacKenzie is the co-founder of Alpha School — the K-12 private school where kids
+        crush core academics in about two hours a day, then spend the rest of the afternoon
+        on workshops, projects, and the things they love. She'll share how the model works,
+        where Alpha is headed next, and what it means for Bay Area families.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── REGISTER ─────────────────────────── -->
+<section id="register" class="shell section">
+
+  <div class="form-wrap">
+
+    <div class="form-intro">
+      <span class="eyebrow">Reserve your seat</span>
+      <h2 class="reveal" data-d="1">RSVP to the <em>evening.</em></h2>
+      <p class="reveal" data-d="2">
+        We cap the room so the conversation stays real. Fill in the fields on the right and
+        we'll send a confirmation to your inbox within the hour.
+      </p>
+
+      <dl class="quickfacts reveal" data-d="3">
+        <div class="qf"><dt>Date</dt><dd>Wednesday, April 22, 2026<small>Doors 5:55 PM · Program 6:00 – 9:00 PM</small></dd></div>
+        <div class="qf"><dt>Where</dt><dd>11 Glen Alpine Rd.<small>Piedmont, CA 94611</small></dd></div>
+        <div class="qf"><dt>Format</dt><dd>Cocktails &amp; conversation<small>Light fare · dietary options available</small></dd></div>
+        <div class="qf"><dt>For</dt><dd>Bay Area parents &amp; invited guests<small>Please RSVP every attendee by name</small></dd></div>
+      </dl>
+    </div>
+
+    <form class="card" id="regform" novalidate>
+      <span class="badge">RSVP</span>
+
+      <div class="form-header">
+        <h3>Your details.</h3>
+        <div class="step">Step <b>01 / 01</b></div>
+      </div>
+
+      <div class="fgrid">
+
+        <div class="field">
+          <label for="first_name">First name <span class="req">*</span></label>
+          <input id="first_name" name="first_name" required autocomplete="given-name" />
+        </div>
+        <div class="field">
+          <label for="last_name">Last name <span class="req">*</span></label>
+          <input id="last_name" name="last_name" required autocomplete="family-name" />
+        </div>
+
+        <div class="field full">
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@domain.com" />
+        </div>
+
+        <div class="field">
+          <label for="phone_number">Phone number</label>
+          <input id="phone_number" name="phone_number" type="tel" autocomplete="tel" placeholder="(555) 123-4567" />
+        </div>
+        <div class="field">
+          <label for="city">City</label>
+          <input id="city" name="city" autocomplete="address-level2" placeholder="Piedmont" />
+        </div>
+
+        <div class="field">
+          <label for="zip_code">Zip code</label>
+          <input id="zip_code" name="zip_code" autocomplete="postal-code" inputmode="numeric" placeholder="94611" />
+        </div>
+        <div class="field">
+          <label for="attendee_purpose">Attendee purpose <span class="req">*</span></label>
+          <select id="attendee_purpose" name="attendee_purpose" required>
+            <option value="" disabled selected>Select one…</option>
+            <option>Prospective parent</option>
+            <option>Current Alpha family</option>
+            <option>Educator</option>
+            <option>Media / Press</option>
+            <option>Investor / Partner</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field full" id="purpose-other" hidden>
+          <label for="other_purpose">Please describe</label>
+          <input id="other_purpose" name="other_purpose" placeholder="Tell us a bit more" />
+        </div>
+
+        <div class="field full">
+          <label for="relationship">Relationship to student(s)</label>
+          <select id="relationship" name="relationship">
+            <option value="" disabled selected>Select one…</option>
+            <option>Parent</option>
+            <option>Guardian</option>
+            <option>Grandparent</option>
+            <option>Family friend</option>
+            <option>Prospective parent — no children yet</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Students group -->
+        <div class="group-head">
+          <h4>Students</h4>
+          <span class="note">Up to 5 · optional</span>
+        </div>
+
+        <div id="students">
+          <div class="student-row" data-i="1">
+            <div class="field">
+              <label>Student 1 · first &amp; last name</label>
+              <input name="student_name_1" placeholder="Jane Doe" />
+            </div>
+            <div class="field">
+              <label>Current grade level</label>
+              <select name="student_grade_1">
+                <option value="" disabled selected>Select…</option>
+                <option>Pre-K</option>
+                <option>Kindergarten</option>
+                <option>1st</option><option>2nd</option><option>3rd</option>
+                <option>4th</option><option>5th</option><option>6th</option>
+                <option>7th</option><option>8th</option><option>9th</option>
+                <option>10th</option><option>11th</option><option>12th</option>
+              </select>
+            </div>
+            <div></div>
+          </div>
+        </div>
+
+        <button type="button" class="addrow" id="addStudent">
+          <span class="plus">+</span> Add another student
+        </button>
+
+        <!-- Guests group -->
+        <div class="group-head">
+          <h4>Guests</h4>
+          <span class="note">Optional</span>
+        </div>
+
+        <div class="field full">
+          <label for="guest_count">How many guests will be attending with you?</label>
+          <select id="guest_count" name="guest_count">
+            <option value="0">Just me</option>
+            <option value="1">1 guest</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+          </select>
+        </div>
+
+        <div id="guests"></div>
+
+        <!-- Dietary + referral -->
+        <div class="group-head">
+          <h4>A few last things</h4>
+          <span class="note">Optional</span>
+        </div>
+
+        <div class="field full">
+          <label for="allergies">Allergies &amp; dietary preferences</label>
+          <input id="allergies" name="allergies" placeholder="e.g. gluten-free, vegetarian, nut allergy" />
+        </div>
+
+        <div class="field full">
+          <label for="howheard">How did you hear about us?</label>
+          <select id="howheard" name="howheard">
+            <option value="" disabled selected>Select one…</option>
+            <option>A friend</option>
+            <option>A current Alpha family</option>
+            <option>Press / article</option>
+            <option>Podcast</option>
+            <option>Search</option>
+            <option>Social media</option>
+            <option>Event / conference</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="howheard_detail">Could you tell us more — which platform, publication, podcast, event, person?</label>
+          <input id="howheard_detail" name="howheard_detail" placeholder="Optional" />
+        </div>
+
+      </div>
+
+      <div class="submit-row">
+        <p class="small">We'll email one confirmation and a single reminder the day before. That's it.</p>
+        <button type="submit" class="submit">
+          <span>Confirm RSVP</span>
+          <span class="arr">→</span>
+        </button>
+      </div>
+
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+    </form>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────── -->
+<footer>
+  <div class="shell">
+    <div class="foot-grid">
+      <div class="brand">
+        <span class="mark"></span>
+        <span>Alpha School</span>
+        <span class="sep">·</span>
+        <span class="loc">Bay Area</span>
+      </div>
+      <div class="small">11 Glen Alpine Rd., Piedmont CA 94611 · In-Person Event</div>
+    </div>
+    <div class="foot-bar">
+      <span>© 2026 Alpha School</span>
+      <span><a href="#top">Back to top ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── Countdown to Wed April 22 2026 18:00 America/Los_Angeles (PDT = UTC-7) ── */
+(function(){
+  var target = Date.UTC(2026, 3, 23, 1, 0, 0); // 2026-04-23 01:00 UTC
+  var d = document.getElementById('cd-d');
+  var h = document.getElementById('cd-h');
+  var m = document.getElementById('cd-m');
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var diff = Math.max(0, target - Date.now());
+    var sec = Math.floor(diff/1000);
+    var days = Math.floor(sec/86400); sec -= days*86400;
+    var hrs  = Math.floor(sec/3600);  sec -= hrs*3600;
+    var mins = Math.floor(sec/60);
+    if(d) d.textContent = pad(days);
+    if(h) h.textContent = pad(hrs);
+    if(m) m.textContent = pad(mins);
+  }
+  tick(); setInterval(tick, 30000);
+})();
+
+/* ── Reveal on scroll ── */
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){ e.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('is-in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold:0.1, rootMargin:'0px 0px -8% 0px' });
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* ── Show / hide "describe attendee purpose" when Other is selected ── */
+(function(){
+  var sel = document.getElementById('attendee_purpose');
+  var other = document.getElementById('purpose-other');
+  if(!sel || !other) return;
+  sel.addEventListener('change', function(){
+    other.hidden = (sel.value !== 'Other');
+  });
+})();
+
+/* ── Add / remove student rows ── */
+(function(){
+  var host = document.getElementById('students');
+  var btn = document.getElementById('addStudent');
+  var grades = ['Pre-K','Kindergarten','1st','2nd','3rd','4th','5th','6th','7th','8th','9th','10th','11th','12th'];
+  var idx = 1;
+  function row(n){
+    var opts = '<option value="" disabled selected>Select…</option>' +
+      grades.map(function(g){ return '<option>'+g+'</option>'; }).join('');
+    var d = document.createElement('div');
+    d.className = 'student-row';
+    d.dataset.i = n;
+    d.innerHTML =
+      '<div class="field"><label>Student '+n+' · first &amp; last name</label>' +
+        '<input name="student_name_'+n+'" placeholder="Name" /></div>' +
+      '<div class="field"><label>Current grade level</label>' +
+        '<select name="student_grade_'+n+'">'+opts+'</select></div>' +
+      '<button type="button" class="rm" aria-label="Remove">Remove</button>';
+    d.querySelector('.rm').addEventListener('click', function(){ d.remove(); });
+    return d;
+  }
+  btn.addEventListener('click', function(){
+    var count = host.querySelectorAll('.student-row').length;
+    if(count >= 5){
+      btn.disabled = true;
+      btn.style.opacity = .5;
+      btn.textContent = 'Maximum of 5 students';
+      return;
+    }
+    idx++;
+    host.appendChild(row(idx));
+    if(count + 1 >= 5){
+      btn.disabled = true;
+      btn.style.opacity = .5;
+    }
+  });
+})();
+
+/* ── Render guest fields based on guest count ── */
+(function(){
+  var sel = document.getElementById('guest_count');
+  var host = document.getElementById('guests');
+  if(!sel || !host) return;
+  function render(){
+    var n = parseInt(sel.value, 10) || 0;
+    host.innerHTML = '';
+    for(var i=1; i<=n; i++){
+      var d = document.createElement('div');
+      d.className = 'field full';
+      d.innerHTML = '<label>Guest '+i+' · first &amp; last name</label>' +
+        '<input name="guest_name_'+i+'" placeholder="Name" />';
+      host.appendChild(d);
+    }
+  }
+  sel.addEventListener('change', render);
+})();
+
+/* ── Form submit (demo) ── */
+(function(){
+  var f = document.getElementById('regform');
+  var status = document.getElementById('form-status');
+  if(!f) return;
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var first = f.first_name.value.trim();
+    var em = f.email.value.trim();
+    var ap = f.attendee_purpose.value;
+    status.classList.remove('err');
+    if(!first || !em || !ap){
+      status.classList.add('err');
+      status.textContent = 'Please fill in first name, email, and attendee purpose.';
+      return;
+    }
+    status.textContent = '✓ RSVP received. A confirmation is on its way to ' + em + '.';
+  });
+})();
+</script>
+
+</body>
+</html>
