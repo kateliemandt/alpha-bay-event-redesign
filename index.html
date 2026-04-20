@@ -146,6 +146,92 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 }
 .hero-inner{ position:relative; z-index:1; }
 
+/* Hero: two-column text + photo */
+.hero-grid{
+  display:grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap:clamp(24px, 5vw, 72px);
+  align-items:center;
+}
+@media (max-width:900px){
+  .hero-grid{ grid-template-columns:1fr; gap:36px; }
+}
+
+.hero-photo{
+  position:relative;
+  aspect-ratio: 4/5;
+  border-radius:calc(var(--radius) + 4px);
+  overflow:hidden;
+  background:var(--brand-mist);
+  box-shadow:
+    0 30px 60px -30px rgba(10,26,47,.25),
+    0 10px 24px -16px rgba(0,81,166,.25);
+  transform: rotate(1.4deg);
+  transition: transform .6s var(--ease);
+}
+.hero-photo:hover{ transform: rotate(0deg) scale(1.01); }
+.hero-photo img{
+  width:100%; height:100%;
+  object-fit:cover; object-position: center 42%;
+  display:block;
+}
+.hero-photo::after{
+  /* gentle blue wash + vignette for cohesion with palette */
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, transparent 55%, rgba(6,44,90,.35) 100%),
+    linear-gradient(200deg, rgba(0,114,229,.08) 0%, transparent 40%);
+  pointer-events:none;
+}
+.hero-photo .chip{
+  position:absolute; left:16px; bottom:16px;
+  display:inline-flex; align-items:center; gap:8px;
+  padding:7px 12px 7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter: blur(6px);
+  color:var(--brand-ink);
+  font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+  box-shadow: 0 8px 20px -10px rgba(10,26,47,.3);
+}
+.hero-photo .chip .sq{
+  width:8px; height:8px; border-radius:2px; background:var(--brand);
+}
+
+/* Decorative mini-tile tucked behind the photo */
+.hero-photo-wrap{
+  position:relative;
+}
+.hero-photo-wrap::before{
+  content:""; position:absolute;
+  top:-18px; right:-14px;
+  width:120px; height:120px;
+  border-radius:20px;
+  background:
+    linear-gradient(135deg, var(--brand) 0%, #4AA0FF 100%);
+  transform:rotate(-8deg);
+  box-shadow: 0 14px 30px -12px rgba(0,114,229,.5);
+  z-index:0;
+}
+.hero-photo-wrap::after{
+  content:""; position:absolute;
+  bottom:-14px; left:-12px;
+  width:82px; height:82px;
+  border-radius:18px;
+  background:var(--gold);
+  transform:rotate(12deg);
+  box-shadow: 0 14px 24px -10px rgba(230,184,75,.55);
+  z-index:0;
+}
+.hero-photo-wrap .hero-photo{
+  position:relative; z-index:1;
+}
+@media (max-width:900px){
+  .hero-photo-wrap::before{ width:88px; height:88px; top:-14px; right:-10px; }
+  .hero-photo-wrap::after{ width:60px; height:60px; bottom:-10px; left:-8px; }
+  .hero-photo{ transform:none; }
+}
+
 .hero-eyebrow{
   display:inline-flex; align-items:center; gap:12px;
   padding:7px 14px 7px 8px;
@@ -440,27 +526,31 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .host-portrait{
   aspect-ratio:4/5;
   border-radius:calc(var(--radius) - 4px);
-  background:
-    radial-gradient(circle at 30% 30%, #6CB3FF, var(--brand) 50%, var(--brand-deep) 100%);
+  background:var(--brand-mist);
   position:relative; overflow:hidden;
-  display:grid; place-items:center;
   box-shadow: 0 24px 60px -26px rgba(0,81,166,.5);
 }
-.host-portrait::before{
-  content:""; position:absolute; inset:0;
-  background:
-    radial-gradient(circle at 70% 70%, rgba(255,255,255,.22), transparent 55%),
-    radial-gradient(circle at 20% 90%, rgba(255,255,255,.15), transparent 55%);
+.host-portrait img{
+  width:100%; height:100%;
+  object-fit:cover; object-position: center 25%;
+  display:block;
 }
-.host-portrait .initials{
-  font-family:var(--ff-display); font-style:italic;
-  color:#fff; font-size:112px; line-height:1;
-  text-shadow:0 6px 24px rgba(0,0,0,.18);
-  position:relative;
+.host-portrait::after{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(180deg, transparent 60%, rgba(6,44,90,.18) 100%);
+  pointer-events:none;
 }
 .host-portrait .ring{
-  position:absolute; inset:16px;
-  border:1px solid rgba(255,255,255,.28); border-radius:inherit;
+  position:absolute; inset:12px;
+  border:1px solid rgba(255,255,255,.45); border-radius:inherit;
+  pointer-events:none;
+  z-index:1;
+}
+.host-portrait .credit{
+  position:absolute; left:14px; bottom:12px; z-index:1;
+  font-size:10.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(255,255,255,.92); font-weight:500;
+  text-shadow: 0 1px 6px rgba(0,0,0,.4);
 }
 .host-copy h3{
   margin:0 0 6px;
@@ -732,6 +822,9 @@ footer{
 <header id="top" class="hero">
   <div class="shell hero-inner">
 
+    <div class="hero-grid">
+      <div class="hero-copy">
+
     <div class="hero-eyebrow reveal" data-d="1">
       <span class="pulse" aria-hidden="true"></span>
       <span>In-Person Event · <b>Alpha Bay Area</b></span>
@@ -750,6 +843,18 @@ footer{
     <div class="hero-ctas reveal" data-d="4">
       <a href="#register" class="btn btn-primary">Reserve your seat <span class="arr">→</span></a>
       <a href="#special" class="btn btn-ghost">What's being announced <span class="arr">↘</span></a>
+    </div>
+
+      </div>
+
+      <div class="hero-photo-wrap reveal" data-d="3" aria-hidden="true">
+        <div class="hero-photo">
+          <img src="assets/alpha-students.jpg"
+               alt="Alpha School students in a group activity outdoors"
+               loading="eager" fetchpriority="high" />
+          <span class="chip"><span class="sq"></span> Alpha students · in motion</span>
+        </div>
+      </div>
     </div>
 
     <!-- Facts strip -->
@@ -838,9 +943,12 @@ footer{
   </div>
 
   <div class="host reveal" data-d="1">
-    <div class="host-portrait" aria-hidden="true">
-      <span class="ring"></span>
-      <span class="initials">MP</span>
+    <div class="host-portrait">
+      <img src="assets/mackenzie-price.jpg"
+           alt="MacKenzie Price, co-founder of Alpha School"
+           loading="lazy" />
+      <span class="ring" aria-hidden="true"></span>
+      <span class="credit">Photo · Felicia Reed</span>
     </div>
     <div class="host-copy">
       <h3>MacKenzie Price</h3>
