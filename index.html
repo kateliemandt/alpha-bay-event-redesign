@@ -11,6 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- Goldcast embed loader -->
+<script src="https://dnf20ypvrc856.cloudfront.net/embed.js"></script>
+
 <style>
 /* ─── Alpha · Cocktails & Conversations · Bay Area ───
    Brand blue · Piedmont · Apr 22 2026
@@ -623,92 +626,57 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   box-shadow: 0 8px 22px -10px rgba(0,114,229,.5);
 }
 
-/* ── Register CTA card ───────────────────────── */
-.reg-cta{ padding:40px 36px; }
-.reg-cta-head h3{
-  margin:0 0 10px;
-  font-family:var(--ff-display); font-weight:400;
-  font-style:italic; font-size:clamp(32px, 3.4vw, 44px);
-  line-height:1.05; letter-spacing:-0.01em; color:var(--ink);
+/* ── Embedded Goldcast form card ─────────────── */
+.embed-card{
+  padding:28px;
 }
-.reg-cta-head p{
-  margin:0; color:var(--ink-2); font-size:15.5px; line-height:1.6;
-  max-width:46ch;
-}
-
-.reg-big-btn{
-  display:flex; align-items:center; justify-content:space-between; gap:20px;
-  margin-top:28px;
-  padding:22px 24px;
-  border-radius:14px;
-  background: linear-gradient(135deg, var(--brand) 0%, #2E8CFF 100%);
-  color:#fff;
-  box-shadow:
-    0 18px 40px -18px rgba(0,114,229,.65),
-    inset 0 1px 0 rgba(255,255,255,.2);
-  transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s;
-  position:relative; overflow:hidden;
-}
-.reg-big-btn::before{
-  /* subtle sheen */
-  content:""; position:absolute; inset:0;
-  background: radial-gradient(circle at 85% -20%, rgba(255,255,255,.25), transparent 50%);
-  pointer-events:none;
-}
-.reg-big-btn:hover{
-  transform:translateY(-2px);
-  box-shadow:
-    0 24px 50px -18px rgba(0,114,229,.75),
-    inset 0 1px 0 rgba(255,255,255,.24);
-  filter:brightness(1.03);
-}
-.reg-big-btn-label{
-  display:flex; flex-direction:column; gap:4px;
+.goldcast-embed{
+  min-height: 560px;
   position:relative;
+  border-radius:10px;
+  background:var(--paper);
+  overflow:hidden;
 }
-.reg-big-btn .eyebrow-light{
-  font-size:11px; letter-spacing:.22em; text-transform:uppercase;
-  color:rgba(255,255,255,.78); font-weight:600;
+.goldcast-embed iframe,
+.goldcast-embed > div{
+  max-width:100%;
 }
-.reg-big-btn-title{
-  font-family:var(--ff-display); font-weight:400; font-style:italic;
-  font-size:26px; line-height:1.05; letter-spacing:-0.01em;
-  color:#fff;
+.embed-loading{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:14px;
+  padding:24px;
+  color:var(--ink-3);
+  font-size:14px;
+  text-align:center;
 }
-.reg-big-btn .arr-lg{
-  font-size:28px; line-height:1; color:#fff;
-  transition:transform .3s var(--ease);
-  position:relative;
+.embed-loading .spinner{
+  width:28px; height:28px; border-radius:50%;
+  border:2px solid var(--line-2);
+  border-top-color:var(--brand);
+  animation: spin 1s linear infinite;
 }
-.reg-big-btn:hover .arr-lg{ transform:translateX(6px); }
-
-.reg-list{
-  margin:22px 0 0; padding:0; list-style:none;
-  display:grid; gap:10px;
+@keyframes spin{ to{ transform:rotate(360deg); } }
+.embed-loading p{ margin:0; }
+.embed-fallback{
+  font-size:12.5px; color:var(--ink-3);
 }
-.reg-list li{
-  display:flex; align-items:flex-start; gap:10px;
-  font-size:14px; color:var(--ink-2); line-height:1.5;
-}
-.reg-list .tick{
-  flex:0 0 auto;
-  width:20px; height:20px; border-radius:50%;
-  display:grid; place-items:center;
-  background:var(--brand-soft); color:var(--brand);
-  font-size:11px; font-weight:700;
-  margin-top:2px;
-}
-
-.reg-disclaimer{
-  margin:22px 0 0; padding-top:18px;
-  border-top:1px dashed var(--line-2);
-  font-size:12.5px; color:var(--ink-3); line-height:1.55;
-}
-.reg-disclaimer a{
+.embed-fallback a{
   color:var(--brand); font-weight:500;
   border-bottom:1px solid rgba(0,114,229,.3);
 }
-.reg-disclaimer a:hover{ border-bottom-color:var(--brand); }
+.embed-fallback a:hover{ border-bottom-color:var(--brand); }
+.embed-footnote{
+  margin:18px 2px 0;
+  padding-top:16px;
+  border-top:1px dashed var(--line-2);
+  font-size:12px; color:var(--ink-3); letter-spacing:.02em;
+}
+.embed-footnote a{
+  color:var(--brand); font-weight:500;
+  border-bottom:1px solid rgba(0,114,229,.25);
+}
+.embed-footnote a:hover{ border-bottom-color:var(--brand); }
 
 .form-header{
   display:flex; justify-content:space-between; align-items:baseline;
@@ -907,7 +875,7 @@ footer{
       <span class="sep">·</span>
       <span class="loc">Bay Area</span>
     </a>
-    <a href="https://events.alpha.school/register/1d083703-c1cf-4a0d-a424-e79d596817d8/" target="_blank" rel="noopener" class="nav-cta">Register with Alpha <span class="arr">→</span></a>
+    <a href="#register" class="nav-cta">Register with Alpha <span class="arr">→</span></a>
   </div>
 </nav>
 
@@ -934,7 +902,7 @@ footer{
     </p>
 
     <div class="hero-ctas reveal" data-d="4">
-      <a href="https://events.alpha.school/register/1d083703-c1cf-4a0d-a424-e79d596817d8/" target="_blank" rel="noopener" class="btn btn-primary">Reserve your seat <span class="arr">→</span></a>
+      <a href="#register" class="btn btn-primary">Reserve your seat <span class="arr">→</span></a>
       <a href="#special" class="btn btn-ghost">What's being announced <span class="arr">↘</span></a>
     </div>
 
@@ -1066,8 +1034,8 @@ footer{
       <span class="eyebrow">Reserve your seat</span>
       <h2 class="reveal" data-d="1">RSVP to the <em>evening.</em></h2>
       <p class="reveal" data-d="2">
-        We cap the room so the conversation stays real. Registration takes under a minute on
-        Alpha's official page — a confirmation lands in your inbox within the hour.
+        We cap the room so the conversation stays real. Fill in the form — registration
+        takes under a minute, and a confirmation lands in your inbox within the hour.
       </p>
 
       <dl class="quickfacts reveal" data-d="3">
@@ -1078,33 +1046,23 @@ footer{
       </dl>
     </div>
 
-    <aside class="card reg-cta">
+    <aside class="card embed-card">
       <span class="badge">RSVP</span>
-
-      <div class="reg-cta-head">
-        <h3>Register in one click.</h3>
-        <p>Registrations are handled on Alpha's official page. You'll finish up with your details there, and a confirmation email goes out within the hour.</p>
+      <div id="goldcast-registration-form" class="goldcast-embed">
+        <div class="embed-loading" aria-live="polite">
+          <span class="spinner" aria-hidden="true"></span>
+          <p>Loading secure registration form…</p>
+          <p class="embed-fallback">
+            Form not loading?
+            <a href="https://events.alpha.school/register/1d083703-c1cf-4a0d-a424-e79d596817d8/"
+               target="_blank" rel="noopener">Open in a new tab →</a>
+          </p>
+        </div>
       </div>
-
-      <a class="reg-big-btn"
-         href="https://events.alpha.school/register/1d083703-c1cf-4a0d-a424-e79d596817d8/"
-         target="_blank" rel="noopener">
-        <span class="reg-big-btn-label">
-          <span class="eyebrow-light">Continue to Alpha</span>
-          <span class="reg-big-btn-title">Register on the official page</span>
-        </span>
-        <span class="arr-lg" aria-hidden="true">→</span>
-      </a>
-
-      <ul class="reg-list">
-        <li><span class="tick" aria-hidden="true">✓</span> Opens Alpha's secure Goldcast registration form</li>
-        <li><span class="tick" aria-hidden="true">✓</span> Confirmation &amp; calendar invite emailed within the hour</li>
-        <li><span class="tick" aria-hidden="true">✓</span> Seats are capped — reserve early</li>
-      </ul>
-
-      <p class="reg-disclaimer">
-        This page is a share-friendly preview. All sign-ups are processed by
-        <a href="https://events.alpha.school/register/1d083703-c1cf-4a0d-a424-e79d596817d8/" target="_blank" rel="noopener">events.alpha.school</a>.
+      <p class="embed-footnote">
+        Secure registration by
+        <a href="https://events.alpha.school/" target="_blank" rel="noopener">events.alpha.school</a>
+        · confirmation emailed within the hour.
       </p>
     </aside>
 
@@ -1131,6 +1089,30 @@ footer{
 </footer>
 
 <script>
+/* ── Goldcast registration widget (embed mode) ── */
+(function(){
+  var tries = 0;
+  function init(){
+    if(!window.GOLDCAST || !window.GOLDCAST.RegistrationWidget){
+      if(tries++ > 60) return; // give up after ~6s, fallback stays visible
+      return setTimeout(init, 100);
+    }
+    try{
+      new window.GOLDCAST.RegistrationWidget({
+        event_id: '1d083703-c1cf-4a0d-a424-e79d596817d8',
+        mode: 'embed',
+        containerSelector: '#goldcast-registration-form',
+        theme_obj: {},
+        backendUrl: 'https://backend.goldcast.io'
+      });
+    } catch(e){
+      // Leave the fallback message visible if init fails
+      console.error('Goldcast embed failed to initialize:', e);
+    }
+  }
+  init();
+})();
+
 /* ── Countdown to Wed April 22 2026 18:00 America/Los_Angeles (PDT = UTC-7) ── */
 (function(){
   var target = Date.UTC(2026, 3, 23, 1, 0, 0); // 2026-04-23 01:00 UTC
